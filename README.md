@@ -22,7 +22,4 @@ tmux kill-session -t 3
 
 # Git:
 ### commited large files to git repo and need to remove (blob.txt as an example):
-```python
-pip install --user git-filter-repo
-git filter-repo --force --invert-paths --path-match blob.txt
-```
+Use BFG Repo-Cleaner: https://rtyley.github.io/bfg-repo-cleaner/
