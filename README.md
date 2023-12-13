@@ -1,8 +1,9 @@
 # research_utils
-Common commands and utils to take note of when working in lab
+Common commands and utils to take note of when working in lab.
 
-# Tmux
-### running processes in the server without disconnecting
+Feel free to add to the README or add scripts that makes life easier here.
+
+# Tmux (running processes in the server without disconnecting)
 ```python
 # create a new session with a session name (easier to figure out which session is which)
 tmux new -s session_name
@@ -20,6 +21,6 @@ tmux attach-session -t named_session
 tmux kill-session -t 3
 ```
 
-# Git:
+# Git issues:
 ### commited large files to git repo and need to remove (blob.txt as an example):
 Use BFG Repo-Cleaner: https://rtyley.github.io/bfg-repo-cleaner/
