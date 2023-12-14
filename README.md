@@ -23,4 +23,6 @@ tmux kill-session -t 3
 
 # Git issues:
 ### commited large files to git repo and need to remove (blob.txt as an example):
+> Github won't let you push large files to your repo and if you somehow got to the limit and wanted to push something small that would put it over the limit, it will cause issues. However, since Github keeps the history of your commits with the files, the solution is not as simple as removing the large files from your repo. So you'll need to delete the large files from your repo history through BFG Repo-Cleaner. (There are other ways to remove from the history but for me, it was the easiest and most straight forward method).
+
 Use BFG Repo-Cleaner: https://rtyley.github.io/bfg-repo-cleaner/
