@@ -3,6 +3,14 @@ Common commands and utils to take note of when working in lab.
 
 Feel free to add to the README or add scripts that makes life easier here.
 
+# Using Jupyter Notebook on server (MobaXTerm)
+First set up an SSH tunnel with the following parameters (with your credentials):
+
+Then start the SSH tunnel and run the following command:
+```python
+jupyter notebook --no-browser
+```
+
 # Tmux (running processes in the server without disconnecting)
 ```python
 # create a new session with a session name (easier to figure out which session is which)
