@@ -3,6 +3,9 @@ Common commands and utils to take note of when working in lab.
 
 Feel free to add to the README or add scripts that makes life easier here.
 
+# Copying to and from different servers
+Use rsync: ```python rsync -r username@server1_IP:source_dir username@server2_IP:destination_dir ```
+
 # Copying to and from  GCP
 1. bash (to use gcloud)
 2. Auth login first using:
