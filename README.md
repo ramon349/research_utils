@@ -35,7 +35,7 @@ Use rsync: ```python rsync -r username@server1_IP:source_dir username@server2_IP
 # Using Jupyter Notebook on server (MobaXTerm)
 First set up an SSH tunnel with the following parameters (with your credentials):
 ![SSH Tunnel setup](images/port_forwarding_servers.png)
-Then start the SSH tunnel and run the following command:
+Then start the SSH tunnel, bash and then run the following command:
 ```python
 jupyter notebook --no-browser
 ```
