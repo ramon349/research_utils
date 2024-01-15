@@ -6,6 +6,8 @@ Feel free to add to the README or add scripts that makes life easier here.
 # envrionment files
 ### ncsnv2.yml
 > Environment.yml file for "Improved Techniques for Training Score-Based Generative Models." https://github.com/ermongroup/ncsnv2
+### SAM.yml
+> Environment.yml file for "Segment Anything" [https://github.com/ermongroup/ncsnv2](https://github.com/facebookresearch/segment-anything)
 
 # Uploading data to MD.ai
 > Using MD.ai CLI: https://docs.md.ai/cli/installation/
