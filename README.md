@@ -46,6 +46,40 @@ Then start the SSH tunnel, bash and then run the following command:
 jupyter notebook --no-browser
 ```
 
+# Memory issues:
+### Memory not being released (cuda running out of memory error)
+> if you train a model and it runs for a few loops (batches or epochs) but then suddenly runs out of memory, the issue is probably that some variable is compounding and its memory is not being released. A few things you can do to debug is:
+0) check memory usage after each loop using torch.cuda.memory_allocated()
+```python
+# this code will print device memory usage in MB, i being batch or epoch number
+print('batch {}: {:.2f}MB'.format(i, float(torch.cuda.memory_allocated(device=DEV) / (1024 * 1024))))
+```
+
+1) collect garbage and release cache ([https://docs.python.org/3/library/gc.html](https://stackoverflow.com/questions/59129812/how-to-avoid-cuda-out-of-memory-in-pytorch))
+```python
+import gc
+import torch
+
+gc.collect()
+torch.cuda.empty_cache()
+```
+2) zero grad the optimizers - PyTorch accumulates the gradients on subsequent backward passes and if you don't the gradient would be a combination of the old gradient, which you have already used to update your model parameters and the newly-computed gradient. (https://stackoverflow.com/questions/48001598/why-do-we-need-to-call-zero-grad-in-pytorch)
+```python
+optimizer.zero_grad(set_to_none=True)
+```
+3) make sure to add .items() not tensors in history or anything that will be evaluated at the end of the loop
+```python
+# if loss is a tensor and used in gradient calculations then loss_sum will accumulate memory
+loss = loss_fn(x, y)
+loss_sum += loss
+# print(loss) will give something like: "tensor(0.3652, device='cuda:0', grad_fn=<MulBackward0>)"
+
+# the .item() of the tensor will just give the value and remove any gradient 
+loss = loss_fn(x, y)
+loss_sum += loss.item()
+# print(loss.item()) will give something like: "0.3651849031448364"
+```
+
 # Tmux (running processes in the server without disconnecting)
 ```python
 # create a new session with a session name (easier to figure out which session is which)
