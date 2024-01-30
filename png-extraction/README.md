@@ -1,4 +1,4 @@
-# The Niffler PNG Extractor
+# The Niffler PNG Extractor (https://github.com/Emory-HITI/Niffler)
 
 The PNG Extractor converts a set of DICOM images into png images, extract metadata in a privacy-preserving manner.
 
