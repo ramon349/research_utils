@@ -3,8 +3,8 @@
 
 0: make sure MDai is online/path is configured correctly
 ```python export PATH=$PATH:/home/jason/mdai ```
+```if that doesn't work, go to home dir and use: "./mdai [commands]"```
 
-0.1: if that doesn't work, go to home dir and use: "./mdai [commands]"
 1: make sure domain is correct:
 ```python ./mdai config domain mc.md.ai ```
 
