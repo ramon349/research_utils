@@ -15,5 +15,8 @@
 5. upload from mayo servers to md.ai
 ```python ./mdai dataset load --dataset-id dataset_id data_location_in_server ```
 
+# Making annotations in MD.ai
+Make sure to create labels that are not metadata. Non-admin users will not be able to use your annotation labels if it's metadata. However, if you did make annotation labels as metadata, you can simply copy the annotations into a new annotation group and then people with non-admin access will be able to use those labels.
+
 # Downloading annotations from MD.ai
-> see the example jupyter notebook: get_annotations.ipynb
+see the example jupyter notebook: get_annotations.ipynb
