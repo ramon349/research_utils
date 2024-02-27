@@ -60,6 +60,12 @@ loss = loss_fn(x, y)
 loss_sum += loss.item()
 # print(loss.item()) will give something like: "0.3651849031448364"
 ```
+### pip running out of memory (can't install because of OS memory)
+> this might occur if you have a new conda environment and trying to install a separate pip and packages on it
+if so, try conda clean (Remove unused packages and caches.): https://docs.conda.io/projects/conda/en/latest/commands/clean.html
+```python
+conda clean -a
+```
 
 # Tmux (running processes in the server without disconnecting)
 ```python
