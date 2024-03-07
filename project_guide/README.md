@@ -1,0 +1,1 @@
+# Notes on starting any project
