@@ -84,6 +84,15 @@ tmux attach-session -t named_session
 #Killing sessions:
 tmux kill-session -t 3
 ```
+# Cleaning up disk space:
+### check disk space to a directory:
+```python
+du -sh directory_name
+```
+### remove directory recursively:
+```python
+rm -r directory_name
+```
 
 # Git issues:
 ### commited large files to git repo and need to remove (blob.txt as an example):
