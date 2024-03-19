@@ -1,4 +1,4 @@
-# Optuna
+# [Optuna](https://github.com/optuna/optuna)
 ```see the example notebook```
 
 # [Optuna dashboard](https://github.com/optuna/optuna-dashboard)
