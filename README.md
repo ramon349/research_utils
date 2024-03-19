@@ -9,6 +9,45 @@ Feel free to add to the README or add scripts that makes life easier here.
 ### SAM.yml
 > Environment.yml file for "Segment Anything" [https://github.com/ermongroup/ncsnv2](https://github.com/facebookresearch/segment-anything)
 
+# Using Jupyter Notebook on server (MobaXTerm)
+First set up an SSH tunnel with the following parameters (with your credentials):
+![SSH Tunnel setup](images/port_forwarding_servers.png)
+Then start the SSH tunnel, bash and then run the following command:
+```python
+jupyter notebook --no-browser
+```
+
+# Tmux (running processes in the server without disconnecting)
+```python
+# create a new session with a session name (easier to figure out which session is which)
+tmux new -s session_name
+
+#Detaching from Tmux Session:
+Ctrl+b d
+
+#Listing current tmux sessions:
+tumx ls
+
+#Attaching to tmux sessions:
+tmux attach-session -t named_session
+
+#Killing sessions:
+tmux kill-session -t 3
+
+# scrolling through errors in copy mode:
+Ctrl+b,[
+```
+
+# Cleaning up disk space:
+### check disk space to a directory:
+```python
+du -sh directory_name
+```
+### remove directory recursively:
+```python
+rm -r directory_name
+```
+
 # Copying to and from different servers
 Use rsync: ```python rsync -r username@server1_IP:source_dir username@server2_IP:destination_dir ```
 
@@ -18,14 +57,6 @@ Use rsync: ```python rsync -r username@server1_IP:source_dir username@server2_IP
 ```python gcloud auth login --no-launch-browser ```
 3. Use gsutil to copy from one dir to another in the server:
 ```python gsutil -m cp -r "gs://ml-bf1c-phi-shared-aif-us-p/GCP_location" /media/Datacenter_storage/server_location/ ```
-
-# Using Jupyter Notebook on server (MobaXTerm)
-First set up an SSH tunnel with the following parameters (with your credentials):
-![SSH Tunnel setup](images/port_forwarding_servers.png)
-Then start the SSH tunnel, bash and then run the following command:
-```python
-jupyter notebook --no-browser
-```
 
 # Memory issues:
 ### Memory not being released (cuda running out of memory error)
@@ -68,6 +99,7 @@ if so, try conda clean (Remove unused packages and caches.): https://docs.conda.
 conda clean -a
 ```
 
+# Random Errors and quality of life stuff
 ### RuntimeError: main thread is not in main loop
 Sometimes when running optuna training, this error will occur and for me, it was because of matplotlib and plotting losses within the trials. See this [issue](https://github.com/r9y9/deepvoice3_pytorch/issues/5) for more context. So you can either remove the plotting during optuna training or use the following lines:
 
@@ -77,34 +109,9 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 ```
 
-# Tmux (running processes in the server without disconnecting)
+### Plus Minus sign (±)
 ```python
-# create a new session with a session name (easier to figure out which session is which)
-tmux new -s session_name
-
-#Detaching from Tmux Session:
-Ctrl+b d
-
-#Listing current tmux sessions:
-tumx ls
-
-#Attaching to tmux sessions:
-tmux attach-session -t named_session
-
-#Killing sessions:
-tmux kill-session -t 3
-
-# scrolling through errors in copy mode:
-Ctrl+b,[
-```
-# Cleaning up disk space:
-### check disk space to a directory:
-```python
-du -sh directory_name
-```
-### remove directory recursively:
-```python
-rm -r directory_name
+print('\u00B1')  # will give you the ±
 ```
 
 # Git issues:
