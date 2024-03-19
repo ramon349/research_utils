@@ -83,6 +83,9 @@ tmux attach-session -t named_session
 
 #Killing sessions:
 tmux kill-session -t 3
+
+# scrolling through errors in copy mode:
+Ctrl+b,[
 ```
 # Cleaning up disk space:
 ### check disk space to a directory:
