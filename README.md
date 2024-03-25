@@ -3,6 +3,8 @@ Common commands and utils to take note of when working in lab.
 
 Feel free to add to the README or add scripts that makes life easier here.
 
+./pytorch_training: contains common pytorch training tips, tricks, and mistakes (dataloading, transforms, modes, etc.)
+
 # envrionment files
 ### ncsnv2.yml
 > Environment.yml file for "Improved Techniques for Training Score-Based Generative Models." https://github.com/ermongroup/ncsnv2
