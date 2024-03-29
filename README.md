@@ -56,9 +56,10 @@ Use rsync: ```python rsync -r username@server1_IP:source_dir username@server2_IP
 # Copying to and from  GCP
 1. bash (to use gcloud)
 2. Auth login first using:
-```python gcloud auth login --no-launch-browser ```
-3. Use gsutil to copy from one dir to another in the server:
-```python gsutil -m cp -r "gs://ml-bf1c-phi-shared-aif-us-p/GCP_location" /media/Datacenter_storage/server_location/ ```
+```gcloud auth login --no-launch-browser ```
+3. Do all the login stuff as necessary and use the authentication code.
+4. Use gsutil to copy from one dir to another in the server:
+```gsutil -m cp -r "gs://ml-bf1c-phi-shared-aif-us-p/GCP_location" /media/Datacenter_storage/server_location/ ```
 
 # Memory issues:
 ### Memory not being released (cuda running out of memory error)
