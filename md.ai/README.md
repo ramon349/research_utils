@@ -11,13 +11,13 @@ export PATH=$PATH:/home/jason/mdai ``` if that doesn't work, go to home dir and 
 ```
 
 5. make sure token is updated
-```
-python ./mdai config token ###
+```python
+./mdai config token ###
 ```
 
 7. make sure the correct project and dataset-id is being used
-```
-python ./mdai project list-datasets --project-id project_id
+```python
+./mdai project list-datasets --project-id project_id
 ```
 
 9. upload from mayo servers to md.ai
