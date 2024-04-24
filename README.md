@@ -112,6 +112,10 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 ```
 
+### PIL image mode lookup
+Most pytorch transforms and image manipulations will use PIL as the base so make sure the modes are correct (e.g. 8bit, 16bit, etc.) so that there's no clipping issues. See [PIL documentation](https://pillow.readthedocs.io/en/stable/handbook/concepts.html) for more details.
+> quick lookup: RGB (3x8-bit pixels, true color), L (8-bit pixels, grayscale), I (32-bit signed integer pixels)
+
 ### Plus Minus sign (±)
 ```python
 print('\u00B1')  # will give you the ±
