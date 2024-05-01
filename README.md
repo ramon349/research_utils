@@ -49,6 +49,26 @@ du -sh directory_name
 ```python
 rm -r directory_name
 ```
+### move conda envrionments to a different directory
+> If you have many conda environments and lots of packages, your home directory might get large. To reduce the disk space in home (or any) directory, change the conda environment's default directories to one in a larger storage center (like DatacenterStorage). Refer to this guide for specific directions: [guide](https://stackoverflow.com/questions/67610133/how-to-move-conda-from-one-folder-to-another-at-the-moment-of-creating-the-envi) Otherwise a quick how-to are shown in the steps below:
+1. Change default conda envrionment's pkgs_dirs and envs_dirs
+```python
+# change Conda packages directory
+conda config --add pkgs_dirs /big_partition/users/user/.conda/pkgs
+# change Conda environments directory
+conda config --add envs_dirs /big_partition/users/user/.conda/envs
+```
+2. if starting from scratch, this is enough and you can start creating envirionments and they will be saved to the new default directories
+3. if you're wanting to move conda environment directories, there's no direct way so you have to do the following steps:
+4. Archive environments.
+```python
+conda env export -n foo > foo.yaml # One per environment.
+```
+5. Move package cache. (e.g. Copy contents of old package cache (/home/users/user_name/.conda/envs/.pkgs/) to new package cache.) This is mainly if you want to be very thorough about transferring and not having to redownload stuff for environments you already created.
+6. Recreate environments.
+```python
+conda env create -n foo -f foo.yaml
+```
 
 # Copying to and from different servers
 Use rsync: ```python rsync -r username@server1_IP:source_dir username@server2_IP:destination_dir ```
