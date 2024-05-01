@@ -18,6 +18,17 @@ Then start the SSH tunnel, bash and then run the following command:
 ```python
 jupyter notebook --no-browser
 ```
+### Adding envrionments to Jupyter notebooks
+```python
+# in the activated environment first install ipykernel:
+conda install -c anaconda ipykernel
+# then install the environment as a usable kernel:
+python -m ipykernel install --user --name=env_name
+# list the kernels available:
+jupyter kernelspec list
+# if you want to remove a kernel:
+jupyter kernelspec uninstall kernel_name
+```
 
 # Tmux (running processes in the server without disconnecting)
 ```python
