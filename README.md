@@ -11,7 +11,8 @@ Feel free to add to the README or add scripts that makes life easier here.
 ### SAM.yml
 > Environment.yml file for "Segment Anything" [https://github.com/ermongroup/ncsnv2](https://github.com/facebookresearch/segment-anything)
 
-# Using Jupyter Notebook on server (MobaXTerm)
+# Jupyter Notebook:
+### Using Jupyter Notebook on server (MobaXTerm)
 First set up an SSH tunnel with the following parameters (with your credentials):
 ![SSH Tunnel setup](images/port_forwarding_servers.png)
 Then start the SSH tunnel, bash and then run the following command:
@@ -29,7 +30,15 @@ jupyter kernelspec list
 # if you want to remove a kernel:
 jupyter kernelspec uninstall kernel_name
 ```
-
+### changing the default start location of jupyter notebooks
+```python
+# generate a jupyter config file if it's already not already there (/.jupyter/jupyter_notebook_config.py)
+jupyter notebook --generate-config
+# find the config file (.../.jupyter/jupyter_notebook_config.py) and modify the default notebook directory
+c.NotebookApp.notebook_dir = 'path_to_new_dir'
+# uncomment the notebook_dir and save.
+```
+for further details see the following link: [How to change the Jupyter start-up folder](https://stackoverflow.com/questions/35254852/how-to-change-the-jupyter-start-up-folder)
 # Tmux (running processes in the server without disconnecting)
 ```python
 # create a new session with a session name (easier to figure out which session is which)
