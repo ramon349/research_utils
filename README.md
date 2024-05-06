@@ -64,11 +64,20 @@ Ctrl+b,[
 ### check disk space to a directory:
 ```python
 du -sh directory_name
+# to check hidden directories use:
+du -sh .[^.]*
 ```
 ### remove directory recursively:
 ```python
 rm -r directory_name
 ```
+### cleaning up cache
+> sometimes cache might be full and you might need to do some cleaning in the cache folder
+```python
+# if ./.cache/pip/ is quite full you can do a purge:
+python -m pip cache purge
+```
+And check out [pip cache documentation](https://pip.pypa.io/en/stable/cli/pip_cache/) for more information.
 ### move conda envrionments to a different directory
 > If you have many conda environments and lots of packages, your home directory might get large. To reduce the disk space in home (or any) directory, change the conda environment's default directories to one in a larger storage center (like DatacenterStorage). Refer to this guide for specific directions: [guide](https://stackoverflow.com/questions/67610133/how-to-move-conda-from-one-folder-to-another-at-the-moment-of-creating-the-envi) Otherwise a quick how-to are shown in the steps below:
 1. Change default conda envrionment's pkgs_dirs and envs_dirs
