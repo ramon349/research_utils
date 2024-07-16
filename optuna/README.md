@@ -1,4 +1,5 @@
 # [Optuna](https://github.com/optuna/optuna)
+Generally used to run multiple tests/trials to find the optimal hyperparameters (through random grid search and a parameter to optimize for).
 ```see the example notebook```
 
 # [Optuna dashboard](https://github.com/optuna/optuna-dashboard)
