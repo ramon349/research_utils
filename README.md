@@ -22,6 +22,8 @@ conda env create -f environment.yml
 # export current environment to yml file
 conda env export > environment.yml
 
+# check list of currently available environments
+conda info --envs
 ```
 
 # Jupyter Notebook:
