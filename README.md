@@ -11,6 +11,19 @@ Feel free to add to the README or add scripts that makes life easier here.
 ### SAM.yml
 > Environment.yml file for "Segment Anything" [https://github.com/ermongroup/ncsnv2](https://github.com/facebookresearch/segment-anything)
 
+# conda environments
+```python
+# create a new conda environment
+conda create --name <my-env>
+
+# create environment from yml file
+conda env create -f environment.yml
+
+# export current environment to yml file
+conda env export > environment.yml
+
+```
+
 # Jupyter Notebook:
 ### Using Jupyter Notebook on server (MobaXTerm)
 First set up an SSH tunnel with the following parameters (with your credentials):
