@@ -73,6 +73,10 @@ tmux kill-session -t 3
 
 # scrolling through errors in copy mode:
 Ctrl+b,[
+
+# renaming sessions:
+tmux rename-session -t current_name new_name
+OR: Ctrl+b,$ (within the session to rename it)
 ```
 
 # Cleaning up disk space:
