@@ -12,7 +12,7 @@ Feel free to add to the README or add scripts that makes life easier here.
 > Environment.yml file for "Segment Anything" [https://github.com/ermongroup/ncsnv2](https://github.com/facebookresearch/segment-anything)
 ### transformers.yml
 > Environment.yml file for [HuggingFace](https://huggingface.co/)
-### SAM.yml
+### uvcgan2.yml
 > Environment.yml file for "UVCGAN v2: An Improved Cycle-Consistent GAN for Unpaired Image-to-Image Translation" [UVCGANv2](https://github.com/LS4GAN/uvcgan2/tree/main)
 
 # conda environments
