@@ -124,6 +124,12 @@ conda env create -n foo -f foo.yaml
 
 # Copying to and from different servers
 Use rsync: ```python rsync -r username@server1_IP:source_dir username@server2_IP:destination_dir ```
+## if the source or destination is a local:
+Use scp: 
+```python  
+scp username@serverIP:/server_dir/ local_dir  # server to local
+scp local_dir username@serverIP:/server_dir/  # local to server
+```
 
 # Copying to and from  GCP
 1. bash (to use gcloud)
