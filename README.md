@@ -30,6 +30,17 @@ conda env export > environment.yml
 conda info --envs
 ```
 
+# switching from conda (not free) to miniconda
+0. double check you are using anaconda using by activating conda and using: ``` which python3 ```
+1. backup all your environments (including base)
+2. delete the conda folder in your home directory ./anaconda
+3. install miniconda - during installation, allow it to install miniconda as a default
+4. double check your .condarc and .bashrc file to see if bash will use miniconda
+5. make sure in your miniconda folder, the .condarc doesn't use ```- https://repo.anaconda.com/pkgs/main or - https://repo.anaconda.com/pkgs/r ``` in its channels
+6. instead use the free channels: ```- https://repo.anaconda.com/pkgs/free``` and conda-forge
+7. double check the channels in your miniconda environment with ``` conda config --show channels ```
+8. if default is still in your channels, use the command ``` conda config --remove channels defaults ```
+
 # Jupyter Notebook:
 ### Using Jupyter Notebook on server (MobaXTerm)
 First set up an SSH tunnel with the following parameters (with your credentials):
