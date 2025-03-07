@@ -32,7 +32,7 @@ conda info --envs
 
 # switching from conda (not free) to miniconda
 0. double check you are using anaconda using by activating conda and using: ``` which python3 ```
-1. backup all your environments (including base)
+1. backup all your environments (including base) ``` activate the environment you want to back up and run the command: 'conda env export > environment.yml' ```
 2. delete the conda folder in your home directory ./anaconda
 3. install miniconda - during installation, allow it to install miniconda as a default
 4. double check your .condarc and .bashrc file to see if bash will use miniconda
